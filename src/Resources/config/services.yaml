@@ -1,0 +1,14 @@
+parameters:
+  eskiz_email: '%env(ESKIZ_EMAIL)%'
+  eskiz_password: '%env(ESKIZ_PASSWORD)%'
+  eskiz_from: '%env(ESKIZ_FROM)%'
+
+services:
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  Amir\SmsBundle\:
+    resource: '../../'
+    exclude:
+      - '../../DependencyInjection/'
