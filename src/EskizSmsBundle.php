@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Amir\SmsBundle;
+namespace TkgApps\SmsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SmsBundle extends Bundle
+class EskizSmsBundle extends Bundle
 {
-
 }

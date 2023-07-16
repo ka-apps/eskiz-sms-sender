@@ -1,5 +1,5 @@
 {
-    "name": "amirjon/sms-bundle",
+    "name": "tkg-apps/sms-bundle",
     "type": "symfony-bundle",
     "license": "GPL-3.0-or-later",
     "minimum-stability": "stable",
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Amir\\SmsBundle\\": "src/"
+            "TkgApps\\SmsBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Amir\\SmsBundle\\Tests\\": "tests/"
+            "TkgApps\\SmsBundle\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -54,7 +54,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "6.3.*"
+            "require": "6.2.*"
         }
     }
 }

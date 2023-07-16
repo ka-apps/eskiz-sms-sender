@@ -5,13 +5,13 @@
 ### Install the package
 
 ```bash
-composer req amirjon/sms-bunle
+composer req tkg-apps/sms-bundle
 ```
 
 ### Add to config/bundles.php
 
 ```php
-Amir\SmsBundle\SmsBundle::class => ['all' => true],
+TkgApps\SmsBundle\EskizSmsBundle::class => ['all' => true],
 ```
 
 ### Add next lines to your .env file
@@ -21,6 +21,8 @@ Amir\SmsBundle\SmsBundle::class => ['all' => true],
 ESKIZ_EMAIL=john.doe@mail.com
 ESKIZ_PASSWORD=password_of_eskiz
 ESKIZ_FROM=4546
+ESKIZ_SMS_SEND_LINK=https://notify.eskiz.uz/api/message/sms/send
+ESKIZ_GET_TOKEN_LINK=https://notify.eskiz.uz/api/auth/login
 ###< sms sender ###
 ```
 
@@ -28,7 +30,8 @@ ESKIZ_FROM=4546
 You need to use this service in construct method of class 
 ### Example of simple using
 ```php
-class MyClass {
+class MyClass 
+{
     public function __construct(private SmsSender $sender) 
     {
         $this->sender->sendMessage('998123456789', 'Hello Mario');
