@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Amir\SmsBundle\Component;
+namespace TkgApps\EskizSmsSender\Component;
 
-use Amir\SmsBundle\Component\core\ParameterGetter;
 use Symfony\Component\HttpClient\HttpClient;
+use TkgApps\EskizSmsSender\Component\core\ParameterGetter;
+use TkgApps\EskizSmsSender\Component\Exceptions\SmsSenderException;
 
 class SmsSender
 {
@@ -17,21 +18,21 @@ class SmsSender
     {
         $filteredPhoneNumber = preg_replace("/[^0-9]/", "", $phoneNumber);
 
-        if (!preg_match('/^[0-9]*[0-9]$/', $filteredPhoneNumber)) {
-            return;
+        if (!preg_match('/^[0-9]+$/', $filteredPhoneNumber)) {
+            throw new SmsSenderException('The phone number format is not correct');
         }
 
         $client = HttpClient::create();
 
-        $client->request('POST', 'https://notify.eskiz.uz/api/message/sms/send', [
+        $client->request('POST', $this->parameterGetter->getString('eskiz_sms_send_link'), [
             'headers' => [
-                'Authorization' => 'Bearer ' . $this->getToken()
+                'Authorization' => 'Bearer ' . $this->getToken(),
             ],
             'body' => [
                 'mobile_phone' => $filteredPhoneNumber,
                 'message' => $message,
                 'from' => $this->parameterGetter->getString('eskiz_from'),
-            ]
+            ],
         ]);
     }
 
@@ -40,11 +41,12 @@ class SmsSender
         $body = [
             'body' => [
                 'email' => $this->parameterGetter->getString('eskiz_email'),
-                'password' => $this->parameterGetter->getString('eskiz_password')
-            ]
+                'password' => $this->parameterGetter->getString('eskiz_password'),
+            ],
         ];
+
         $client = HttpClient::create();
-        $response = $client->request('POST', 'https://notify.eskiz.uz/api/auth/login', $body);
+        $response = $client->request('POST', $this->parameterGetter->getString('eskiz_get_token_link'), $body);
 
         return json_decode($response->getContent())->data->token;
     }

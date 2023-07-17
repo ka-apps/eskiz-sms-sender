@@ -2,6 +2,8 @@ parameters:
   eskiz_email: '%env(ESKIZ_EMAIL)%'
   eskiz_password: '%env(ESKIZ_PASSWORD)%'
   eskiz_from: '%env(ESKIZ_FROM)%'
+  eskiz_sms_send_link: '%env(ESKIZ_SMS_SEND_LINK)%'
+  eskiz_get_token_link: '%env(ESKIZ_GET_TOKEN_LINK)%'
 
 services:
   _defaults:
