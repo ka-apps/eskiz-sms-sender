@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TkgApps\SmsBundle;
+namespace TkgApps\EskizSmsSender;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

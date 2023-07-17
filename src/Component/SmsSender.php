@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TkgApps\SmsBundle\Component;
+namespace TkgApps\EskizSmsSender\Component;
 
 use Symfony\Component\HttpClient\HttpClient;
-use TkgApps\SmsBundle\Component\core\ParameterGetter;
-use TkgApps\SmsBundle\Component\Exceptions\SmsSenderException;
+use TkgApps\EskizSmsSender\Component\core\ParameterGetter;
+use TkgApps\EskizSmsSender\Component\Exceptions\SmsSenderException;
 
 class SmsSender
 {
@@ -26,7 +26,7 @@ class SmsSender
 
         $client->request('POST', $this->parameterGetter->getString('eskiz_sms_send_link'), [
             'headers' => [
-                'Authorization' => 'Bearer '.$this->getToken(),
+                'Authorization' => 'Bearer ' . $this->getToken(),
             ],
             'body' => [
                 'mobile_phone' => $filteredPhoneNumber,

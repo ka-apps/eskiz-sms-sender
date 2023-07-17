@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TkgApps\SmsBundle\Component\Exceptions;
+namespace TkgApps\EskizSmsSender\Component\Exceptions;
 
 use Exception;
 

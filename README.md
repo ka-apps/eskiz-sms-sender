@@ -11,7 +11,7 @@ composer req tkg-apps/sms-bundle
 ### Add to config/bundles.php
 
 ```php
-TkgApps\SmsBundle\EskizSmsBundle::class => ['all' => true],
+TkgApps\EskizSmsSender\EskizSmsBundle::class => ['all' => true],
 ```
 
 ### Add next lines to your .env file

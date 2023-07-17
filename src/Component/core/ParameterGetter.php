@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TkgApps\SmsBundle\Component\core;
+namespace TkgApps\EskizSmsSender\Component\core;
 
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;

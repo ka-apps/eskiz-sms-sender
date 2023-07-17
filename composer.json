@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "TkgApps\\SmsBundle\\": "src/"
+            "TkgApps\\EskizSmsSender\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TkgApps\\SmsBundle\\Tests\\": "tests/"
+            "TkgApps\\EskizSmsSender\\Tests\\": "tests/"
         }
     },
     "scripts": {
