@@ -5,7 +5,7 @@
 ### Install the package
 
 ```bash
-composer req tkg-apps/sms-bundle
+composer req tkg-apps/eskiz-sms-bundle
 ```
 
 ### Add to config/bundles.php

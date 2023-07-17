@@ -1,5 +1,5 @@
 {
-    "name": "tkg-apps/sms-bundle",
+    "name": "tkg-apps/eskiz-sms-bundle",
     "type": "symfony-bundle",
     "license": "GPL-3.0-or-later",
     "minimum-stability": "stable",
