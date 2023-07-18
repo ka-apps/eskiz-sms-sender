@@ -34,6 +34,10 @@ class MyClass
 {
     public function __construct(private SmsSender $sender) 
     {
+    }
+    
+    public function send(): void
+    {
         $this->sender->sendMessage('998123456789', 'Hello Mario');
     }
 }
